@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community – Bright Aerospace</title>
+  <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Rowdies:wght@400;700&family=Secular+One&family=Sedan&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="communitystyle.css"/>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><img src="logo.png" alt="Logo" style="width:30px;height:30px;border-radius:50%;"/></div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Courses</a></li>
+    <li><a href="#" id="navCommunity" style="color:var(--yellow);" onclick="showPage('community'); return false;">Community</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">More</a></li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
+  <div class="nav-right">
+    <span class="nav-bell">🔔</span>
+    <div class="nav-avatar">A</div>
+  </div>
+</nav>
+
+<!-- ══ COMMUNITY PAGE ══ -->
+<div class="page active" id="page-community">
+  <div class="container">
+    <div class="search-bar">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input type="text" placeholder="Search"/>
+    </div>
+
+    <div class="content-grid">
+      <div class="feed-wrapper">
+        <div class="feed" id="feed">
+
+          <div class="post-card" data-post-id="post-1"
+            data-author="Sudarshan P" data-role="Propulsion Engineer"
+            data-text="Just finished our wind tunnel simulation for the hybrid propulsion model. The drag reduction at Mach 1.4 exceeded expectations by 18%! The results are groundbreaking for next-gen aerospace design and we plan to publish next week."
+            data-tags="#Propulsion,#WindTunnel,#Aerospace"
+            data-time="3h ago">
+            <div class="post-header">
+              <div class="post-avatar" style="background:#F5C800;">S</div>
+              <div class="post-meta">
+                <div class="post-name">Sudarshan P <span class="post-time">3h ago</span></div>
+                <div class="post-role">Propulsion Engineer</div>
+              </div>
+              <button class="join-btn">Join</button>
+            </div>
+            <div class="post-body">
+              <p>Just finished our wind tunnel simulation for the hybrid propulsion model... <span class="more-link" onclick="expandPost(this,'Just finished our wind tunnel simulation for the hybrid propulsion model. The drag reduction at Mach 1.4 exceeded expectations by 18%! The results are groundbreaking for next-gen aerospace design and we plan to publish next week.')">more</span></p>
+              <div class="post-tags"><span>#Propulsion</span><span>#WindTunnel</span><span>#Aerospace</span></div>
+            </div>
+            <div class="post-images" ondblclick="handleDoubleTap(this)" style="position:relative;">
+              <div class="img-main"><div class="img-placeholder img-p1"></div></div>
+              <div class="img-stack">
+                <div class="img-placeholder img-p2"></div>
+                <div class="img-placeholder img-p3"></div>
+              </div>
+            </div>
+            <div class="post-footer">
+              <div class="comment-box">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                <input type="text" placeholder="Add a comment... (Press Enter)" onkeypress="submitComment(event, this)"/>
+              </div>
+              <div class="post-actions">
+                <button class="action-btn like-btn" onclick="toggleLike(this)">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+                </button>
+                <button class="action-btn">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
+                <button class="action-btn save-btn" onclick="toggleSave(this)">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="comments-display" style="display:none;"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="sidebar-card create-post" onclick="openCreateModal()">
+          <span class="create-plus">+</span>
+          <span class="create-label">Create Post</span>
+        </div>
+        <div class="sidebar-card">
+          <h3 class="saved-title">Saved Posts</h3>
+          <p class="no-saved" id="savedCount">No posts saved</p>
+          <span class="view-saved-link" id="viewSavedLink" style="display:none;" onclick="showPage('saved')">View saved posts →</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="logo.png" width="90" height="90" style="border-radius:50%;object-fit:cover;"/></div>
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <div class="footer-committee-label">Core Committee</div>
+        <div class="footer-contacts">
+          <div>Sudarsan P<br>+91 1234567890</div>
+          <div>Sudarsan P<br>+91 1234567890</div>
+          <div>Sudarsan P<br>+91 1234567890</div>
+        </div>
+      </div>
+      <div class="footer-support">Tech Support</div>
+    </div>
+    <div class="footer-bottom">
+      <span>Follow Us On</span>
+      <div class="social-icons">
+        <a href="#" title="Twitter">𝕏</a>
+        <a href="#" title="Facebook">f</a>
+        <a href="#" title="YouTube">▶</a>
+        <a href="#" title="Instagram">◎</a>
+        <a href="#" title="LinkedIn">in</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══ SAVED POSTS PAGE ══ -->
+<div class="page" id="page-saved">
+  <div class="saved-container">
+    <div class="page-header">
+      <h1>Saved Posts</h1>
+      <span class="back-link" onclick="showPage('community')">← Back to Community</span>
+    </div>
+    <div class="saved-feed" id="savedFeed"></div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo"><img src="logo.png" width="90" height="90" style="border-radius:50%;object-fit:cover;"/></div>
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <div class="footer-committee-label">Core Committee</div>
+        <div class="footer-contacts">
+          <div>Sudarsan P<br>+91 1234567890</div>
+          <div>Sudarsan P<br>+91 1234567890</div>
+          <div>Sudarsan P<br>+91 1234567890</div>
+        </div>
+      </div>
+      <div class="footer-support">Tech Support</div>
+    </div>
+    <div class="footer-bottom">
+      <span>Follow Us On</span>
+      <div class="social-icons">
+        <a href="#" title="Twitter">𝕏</a>
+        <a href="#" title="Facebook">f</a>
+        <a href="#" title="YouTube">▶</a>
+        <a href="#" title="Instagram">◎</a>
+        <a href="#" title="LinkedIn">in</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- Create Post Modal -->
+<div class="modal-overlay" id="postModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h2>Create a post</h2>
+      <button class="close-modal" onclick="closeCreateModal()">×</button>
+    </div>
+    <div class="modal-user-info">
+      <div class="post-avatar" style="background:#F5C800;">A</div>
+      <div>
+        <strong>You</strong>
+        <p style="font-size:12px;color:#666;">Posting to Community</p>
+      </div>
+    </div>
+    <div class="modal-body">
+      <textarea id="newPostText" placeholder="What do you want to share with the aerospace community?"></textarea>
+      <input type="text" id="newPostTags" placeholder="Tags (comma separated, e.g. #Space, #CFD)"/>
+      <div class="img-upload-area" id="uploadArea" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event)">
+        <input type="file" id="imgFileInput" accept="image/*" multiple onchange="handleFileSelect(event)"/>
+        <div class="upload-icon">🖼️</div>
+        <div class="upload-label">Drag & drop images or <span>browse</span></div>
+      </div>
+      <div class="img-preview-grid" id="imgPreviewGrid"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="post-btn" onclick="publishPost()">Post</button>
+    </div>
+  </div>
+</div>
+
+<script src="communityscript.js"></script>
+</body>
+</html>
