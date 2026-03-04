@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About</title>
+  <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Rowdies:wght@400;700&family=Secular+One&family=Sedan&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="aboutstyle.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <img src="logo.png" width="42" height="42" style="border-radius:50%;object-fit:cover;"/>
+    <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Courses</a></li>
+    <li><a href="#">Community</a></li>
+    <li><a href="#" style="color:var(--yellow);">About</a></li>
+    <li><a href="#">More</a></li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
+  <div class="nav-right">
+    <span class="nav-bell">🔔</span>
+    <div class="nav-avatar">A</div>
+  </div>
+</nav>
+
+<!-- HERO — STARFIELD -->
+<div class="hero">
+  <canvas id="starCanvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-tagline">
+      Learn <span class="hero-dot">•</span> Build <span class="hero-dot">•</span> Grow
+    </div>
+    <p class="hero-sub">Empowering the next generation of aerospace engineers</p>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="container">
+
+  <!-- VISION -->
+  <div class="section vision-section reveal">
+    <div class="section-label">Our Purpose</div>
+    <h2 class="section-heading">Vision</h2>
+    <div class="vision-box">
+      To build a <strong>thriving, open-access ecosystem</strong> where aerospace enthusiasts, students, and professionals
+      can learn from the best, collaborate on real problems, and grow into the engineers and scientists
+      who will <strong>define the future of space exploration</strong> and aviation. We believe knowledge should
+      have no boundaries — only launch pads.
+    </div>
+  </div>
+
+  <!-- PROBLEM -->
+  <div class="section reveal">
+    <div class="section-label">Why We Exist</div>
+    <h2 class="section-heading">The Problem We Couldn't Ignore</h2>
+    <div class="problem-split">
+      <div class="problem-text">
+        <p>Aerospace education has always been locked behind the walls of elite institutions and expensive programmes.
+        Brilliant minds across the country — students in Tier-2 cities, self-taught engineers, working professionals —
+        were left without access to quality mentorship, structured learning, or a community that spoke their language.</p>
+        <p>We saw students graduating without ever touching real-world aerospace problems. We saw enthusiasts
+        with passion but no platform. We saw a gap between what universities taught and what the industry demanded.
+        That gap was too wide and too costly to ignore — so we built the bridge.</p>
+      </div>
+      <div class="problem-stats">
+        <div class="stat-card">
+          <div class="stat-number" data-target="70">0%</div>
+          <div class="stat-desc">of aerospace students lack access to practical, industry-level exposure</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="500">0+</div>
+          <div class="stat-desc">learners already bridging the gap through our platform</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="20">0+</div>
+          <div class="stat-desc">expert-led courses covering every domain of aerospace</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE WAY WE DO IT -->
+  <div class="section reveal">
+    <div class="section-label">Our Approach</div>
+    <h2 class="section-heading">The Way We Do It</h2>
+    <div class="steps-row">
+
+      <div class="step">
+        <div class="step-box" onclick="showStep(0)" id="sb0">
+          <div class="step-icon">📚</div>
+          <div class="step-number">01</div>
+        </div>
+        <div class="step-label">Expert-Led Courses</div>
+      </div>
+
+      <div class="step-connector"></div>
+
+      <div class="step">
+        <div class="step-box" onclick="showStep(1)" id="sb1">
+          <div class="step-icon">🛠</div>
+          <div class="step-number">02</div>
+        </div>
+        <div class="step-label">Hands-On Projects</div>
+      </div>
+
+      <div class="step-connector"></div>
+
+      <div class="step">
+        <div class="step-box" onclick="showStep(2)" id="sb2">
+          <div class="step-icon">🌐</div>
+          <div class="step-number">03</div>
+        </div>
+        <div class="step-label">Community & Networking</div>
+      </div>
+
+      <div class="step-connector"></div>
+
+      <div class="step">
+        <div class="step-box" onclick="showStep(3)" id="sb3">
+          <div class="step-icon">🚀</div>
+          <div class="step-number">04</div>
+        </div>
+        <div class="step-label">Career Launchpad</div>
+      </div>
+
+    </div>
+
+    <div class="steps-description">
+      <div class="step-desc" id="sd0">📚 <strong>Expert-Led Courses</strong> — Learn directly from IIT faculty, industry professionals, and aerospace veterans. Every course is structured for real understanding, not just certificates.</div>
+      <div class="step-desc" id="sd1">🛠 <strong>Hands-On Projects</strong> — Apply what you learn through wind tunnel simulations, orbital mechanics challenges, and real spacecraft design problems.</div>
+      <div class="step-desc" id="sd2">🌐 <strong>Community & Networking</strong> — Connect with thousands of like-minded engineers, share research, collaborate on projects, and grow your professional network.</div>
+      <div class="step-desc" id="sd3">🚀 <strong>Career Launchpad</strong> — Get placed, get noticed. Our career support connects you with top aerospace firms, research labs, and space startups.</div>
+    </div>
+  </div>
+
+  <!-- MEET OUR TEAM -->
+  <div class="section reveal">
+    <div class="section-label">The People Behind It</div>
+    <h2 class="section-heading">Meet Our Team</h2>
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-card-inner">
+          <div class="team-front">
+            <img src="your-photo.png" width="70" height="75" style="object-fit:cover;border-radius:6px;"/>
+            <div class="team-name">Prof. Saptarshi Kolay</div>
+            <div class="team-role">Founder & Academic Lead</div>
+          </div>
+          <div class="team-back">
+            <div class="team-back-bio">IIT Roorkee faculty with expertise in aerospace structures, mission design, and user-centric engineering education.</div>
+            <div class="team-socials">
+              <a href="#" title="LinkedIn">in</a>
+              <a href="#" title="Twitter">𝕏</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card-inner">
+          <div class="team-front">
+            <img src="your-photo.png" width="70" height="75" style="object-fit:cover;border-radius:6px;"/>
+            <div class="team-name">Sudarsan P</div>
+            <div class="team-role">Propulsion Engineer</div>
+          </div>
+          <div class="team-back">
+            <div class="team-back-bio">Specialist in hybrid propulsion systems and wind tunnel experimentation. Currently researching Mach 1.4 drag reduction models.</div>
+            <div class="team-socials">
+              <a href="#" title="LinkedIn">in</a>
+              <a href="#" title="Twitter">𝕏</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card-inner">
+          <div class="team-front">
+            <img src="your-photo.png" width="70" height="75" style="object-fit:cover;border-radius:6px;"/>
+            <div class="team-name">Team Member</div>
+            <div class="team-role">Orbital Mechanics Lead</div>
+          </div>
+          <div class="team-back">
+            <div class="team-back-bio">Passionate about trajectory design and interplanetary mission planning. Focused on gravity-assist manoeuvre optimization.</div>
+            <div class="team-socials">
+              <a href="#" title="LinkedIn">in</a>
+              <a href="#" title="Twitter">𝕏</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card-inner">
+          <div class="team-front">
+            <img src="your-photo.png" width="70" height="75" style="object-fit:cover;border-radius:6px;"/>
+            <div class="team-name">Team Member</div>
+            <div class="team-role">Community Manager</div>
+          </div>
+          <div class="team-back">
+            <div class="team-back-bio">Building bridges between learners, professionals, and the aerospace industry. Making sure no talent goes unnoticed.</div>
+            <div class="team-socials">
+              <a href="#" title="LinkedIn">in</a>
+              <a href="#" title="Twitter">𝕏</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <img src="logo.png" width="90" height="90" style="border-radius:50%;object-fit:cover;"/>
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <div class="footer-committee-label">Core Committee</div>
+      <div class="footer-contacts">
+        <div>Sudarsan P<br>+91 1234567890</div>
+        <div>Sudarsan P<br>+91 1234567890</div>
+        <div>Sudarsan P<br>+91 1234567890</div>
+      </div>
+    </div>
+    <div class="footer-support">Tech Support</div>
+  </div>
+  <div class="footer-bottom">
+    <span>Follow Us On</span>
+    <div class="social-icons">
+      <a href="#" title="Twitter">𝕏</a>
+      <a href="#" title="Facebook">f</a>
+      <a href="#" title="YouTube">▶</a>
+      <a href="#" title="Instagram">◎</a>
+      <a href="#" title="LinkedIn">in</a>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script src="aboutscript.js"></script>
+
+</body>
+</html>
