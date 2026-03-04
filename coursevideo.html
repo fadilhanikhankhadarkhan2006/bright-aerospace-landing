@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Basic of Space Flight - Video</title>
+  <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Rowdies:wght@400;700&family=Secular+One&family=Sedan&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="coursevideostyle.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-logo"><img src="logo.png" alt="Logo" style="width:28px;height:28px;object-fit:contain;border-radius:50%;"/></div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#" style="color:var(--yellow);">Courses</a></li>
+    <li><a href="#">Community</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">More</a></li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
+  <div class="nav-right">
+    <span class="nav-bell">🔔</span>
+    <div class="nav-avatar">A</div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="main-layout">
+
+  <!-- LEFT COLUMN -->
+  <div class="left-col">
+
+    <!-- VIDEO PLAYER -->
+    <div class="video-player-wrap">
+      <div class="video-space-bg">
+        <div class="orbit-container">
+          <div class="sun"></div>
+          <div class="orbit orbit-1"><div class="planet planet-1"></div></div>
+          <div class="orbit orbit-2"><div class="planet planet-2"></div></div>
+        </div>
+        <button class="play-btn" id="playBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#222"><polygon points="5,3 19,12 5,21"/></svg>
+        </button>
+      </div>
+      <div class="dbl-flash" id="dblFlash">⛶</div>
+      <div class="video-controls">
+        <div class="progress-wrap">
+          <span class="time-label" id="currentTime">00:00</span>
+          <div class="progress-bar" id="progressBar">
+            <div class="progress-fill" id="progressFill"></div>
+            <div class="progress-thumb" id="progressThumb"></div>
+            <!-- Chapter markers: positions as % of 31:00 -->
+            <div class="chapter-marker" style="left:0%" data-label="Intro"></div>
+            <div class="chapter-marker" style="left:25.8%" data-label="Solar System Structure"></div>
+            <div class="chapter-marker" style="left:51.6%" data-label="Microgravity & Radiation"></div>
+            <div class="chapter-marker" style="left:77.4%" data-label="Kepler's Overview"></div>
+          </div>
+          <span class="time-label">31:00</span>
+        </div>
+        <div class="controls-row">
+          <div class="controls-left">
+            <button class="ctrl-btn" id="playPauseBtn" title="Play/Pause">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+            </button>
+            <!-- Seek back 10s -->
+            <button class="seek-btn" onclick="seekBy(-10)" title="Back 10s">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 .49-5.51"/>
+              </svg>
+              <span>10</span>
+            </button>
+            <!-- Seek forward 10s -->
+            <button class="seek-btn" onclick="seekBy(10)" title="Forward 10s">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-.49-5.51"/>
+              </svg>
+              <span>10</span>
+            </button>
+            <div class="volume-wrap">
+              <button class="ctrl-btn" id="muteBtn" title="Mute" onclick="toggleMute()">
+                <svg id="volIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+              </button>
+              <div class="volume-bar" id="volumeBar">
+                <div class="volume-fill" id="volumeFill"></div>
+                <div class="volume-thumb" id="volumeThumb"></div>
+              </div>
+            </div>
+            <span class="time-label" id="currentTime2">00:00 / 31:00</span>
+          </div>
+          <div class="controls-right">
+            <button class="speed-btn" onclick="cycleSpeed(this)">1x</button>
+            <div class="quality-wrap">
+              <button class="quality-btn" id="qualityBtn" onclick="toggleQualityDropdown()">720p</button>
+              <div class="quality-dropdown" id="qualityDropdown">
+                <div class="quality-option" onclick="setQuality('1080p', this)">1080p</div>
+                <div class="quality-option active" onclick="setQuality('720p', this)">720p</div>
+                <div class="quality-option" onclick="setQuality('480p', this)">480p</div>
+                <div class="quality-option" onclick="setQuality('360p', this)">360p</div>
+              </div>
+            </div>
+            <button class="ctrl-btn" title="Fullscreen" onclick="toggleFullscreen()">
+              <svg id="fsIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15,3 21,3 21,9"/><polyline points="9,21 3,21 3,15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIDEO INFO -->
+    <div class="video-info">
+      <div class="video-title">Basic of Space Flight — Introduction</div>
+      <div class="video-meta">By Prof. Saptarshi Kolay &nbsp;·&nbsp; Week I, Lesson 1 &nbsp;·&nbsp; 31 mins &nbsp;·&nbsp; 1,240 views</div>
+      <div class="video-actions">
+        <button class="action-pill" onclick="toggleAction(this)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          Save
+        </button>
+        <button class="next-btn">
+          Next Lesson →
+        </button>
+      </div>
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="description-card">
+      <div class="desc-title">About this lesson</div>
+      <div class="desc-text" id="descText">
+        In this introductory lesson, we explore the fundamentals of space flight — from the basics of orbital mechanics to understanding how spacecraft are designed to survive the harsh environment of space. We'll cover the solar system structure, the concept of microgravity, and how radiation affects spacecraft systems. This lesson lays the groundwork for everything that follows in this course.
+        <span id="descMore" style="color:var(--muted);cursor:pointer;" onclick="expandDesc()"> ...more</span>
+      </div>
+      <div id="descExtra" style="display:none; font-family:'Sedan',serif; font-size:13.5px; line-height:1.8; color:#444;">
+        We'll also touch on Kepler's laws of planetary motion, the history of human spaceflight, and an overview of major space agencies and private players shaping the future of aerospace. By the end of this lesson, you'll have a clear picture of the landscape of modern space exploration.
+      </div>
+      <div class="desc-tags">
+        <span class="desc-tag">#SpaceFlight</span>
+        <span class="desc-tag">#OrbitalMechanics</span>
+        <span class="desc-tag">#Aerospace</span>
+        <span class="desc-tag">#SpaceEnvironment</span>
+      </div>
+    </div>
+
+    <!-- COMMENTS -->
+    <div class="comments-card">
+      <div class="comments-title">Comments <span id="commentCount" style="color:var(--muted);font-size:13px;">(3)</span></div>
+      <div class="comment-input-row">
+        <div class="comment-avatar">A</div>
+        <input class="comment-input" type="text" placeholder="Add a comment..." id="commentInput"/>
+        <button class="comment-submit" onclick="addComment()">Post</button>
+      </div>
+      <div class="comment-list" id="commentList">
+
+        <div class="comment-item" id="ci0">
+          <div class="comment-user-avatar">S</div>
+          <div class="comment-body">
+            <div class="comment-name">Sudarshan P <span>2h ago</span></div>
+            <div class="comment-text">Excellent introduction! The way Prof. Kolay explains microgravity is super intuitive. Looking forward to Week II.</div>
+            <div class="comment-actions">
+              <button class="comment-action like-btn" onclick="toggleLikeComment(this)">👍 Like</button>
+              <button class="comment-action reply-btn" onclick="toggleReplyBox('ci0')">↩ Reply</button>
+            </div>
+            <div class="reply-box" id="reply-ci0" style="display:none;">
+              <div class="reply-input-row">
+                <div class="comment-avatar" style="width:26px;height:26px;font-size:12px;">A</div>
+                <input class="comment-input" type="text" placeholder="Reply to Sudarshan P..."/>
+                <button class="comment-submit" onclick="postReply(this, 'ci0')">Post</button>
+              </div>
+            </div>
+            <div class="replies-list" id="replies-ci0"></div>
+          </div>
+        </div>
+
+        <div class="comment-item" id="ci1">
+          <div class="comment-user-avatar">R</div>
+          <div class="comment-body">
+            <div class="comment-name">Ravi K <span>5h ago</span></div>
+            <div class="comment-text">The orbit animation really helped me understand Kepler's second law visually. Great lesson!</div>
+            <div class="comment-actions">
+              <button class="comment-action like-btn" onclick="toggleLikeComment(this)">👍 Like</button>
+              <button class="comment-action reply-btn" onclick="toggleReplyBox('ci1')">↩ Reply</button>
+            </div>
+            <div class="reply-box" id="reply-ci1" style="display:none;">
+              <div class="reply-input-row">
+                <div class="comment-avatar" style="width:26px;height:26px;font-size:12px;">A</div>
+                <input class="comment-input" type="text" placeholder="Reply to Ravi K..."/>
+                <button class="comment-submit" onclick="postReply(this, 'ci1')">Post</button>
+              </div>
+            </div>
+            <div class="replies-list" id="replies-ci1"></div>
+          </div>
+        </div>
+
+        <div class="comment-item" id="ci2">
+          <div class="comment-user-avatar">P</div>
+          <div class="comment-body">
+            <div class="comment-name">Priya M <span>1d ago</span></div>
+            <div class="comment-text">Can we get a PDF of the slides? Would really help for revision before the practice test.</div>
+            <div class="comment-actions">
+              <button class="comment-action like-btn" onclick="toggleLikeComment(this)">👍 Like</button>
+              <button class="comment-action reply-btn" onclick="toggleReplyBox('ci2')">↩ Reply</button>
+            </div>
+            <div class="reply-box" id="reply-ci2" style="display:none;">
+              <div class="reply-input-row">
+                <div class="comment-avatar" style="width:26px;height:26px;font-size:12px;">A</div>
+                <input class="comment-input" type="text" placeholder="Reply to Priya M..."/>
+                <button class="comment-submit" onclick="postReply(this, 'ci2')">Post</button>
+              </div>
+            </div>
+            <div class="replies-list" id="replies-ci2"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /left-col -->
+
+</div><!-- /main-layout -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="logo.png" alt="Logo" style="width:60px;height:60px;object-fit:contain;border-radius:50%;"/></div>
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <div class="footer-committee-label">Core Committee</div>
+      <div class="footer-contacts">
+        <div>Sudarsan P<br>+91 1234567890</div>
+        <div>Sudarsan P<br>+91 1234567890</div>
+        <div>Sudarsan P<br>+91 1234567890</div>
+      </div>
+    </div>
+    <div class="footer-support">Tech Support</div>
+  </div>
+  <div class="footer-bottom">
+    <span>Follow Us On</span>
+    <div class="social-icons">
+      <a href="#" title="Twitter">𝕏</a>
+      <a href="#" title="Facebook">f</a>
+      <a href="#" title="YouTube">▶</a>
+      <a href="#" title="Instagram">◎</a>
+      <a href="#" title="LinkedIn">in</a>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script src="coursevideoscript.js"></script>
+</body>
+</html>
