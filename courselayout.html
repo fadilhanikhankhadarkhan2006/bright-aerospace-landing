@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Basics of Space Flight</title>
+  <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Rowdies:wght@400;700&family=Rosario:ital,wght@0,400;0,600;1,400&family=Secular+One&family=Sedan&family=Raleway:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="courselayoutstyles.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="nav-logo"><img src="logo.png" width="42" height="42" style="border-radius:50%;object-fit:cover;"/></div>
+    <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#" style="color: var(--yellow);">Courses</a></li>
+    <li><a href="#">Community</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">More</a></li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
+  <div class="nav-right">
+    <span class="nav-bell">🔔</span>
+    <div class="nav-avatar">A</div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Basics of Space Flight</h1>
+    <p class="instructor">By Prof. Saptarshi Kolay</p>
+    <button class="enroll-btn">
+      <span class="price-tag">₹99</span>
+      <span>Enroll Now</span>
+    </button>
+  </div>
+
+  <!-- CONTENT GRID -->
+  <div class="content-grid">
+
+    <!-- VIDEO -->
+    <div>
+      <div class="video-wrapper">
+        <div class="video-header">
+          <div class="video-header-left">
+            <div class="video-icon"><img src="logo.png" width="22" height="22" style="border-radius:50%;object-fit:cover;"/></div>
+            <span>Basic of Space flight.</span>
+          </div>
+          <div style="display:flex;gap:14px;">
+            <span>⏱</span>
+            <span>↗</span>
+          </div>
+        </div>
+        <div class="video-space-bg">
+          <div class="orbit-container">
+            <div class="sun"></div>
+            <div class="orbit orbit-1">
+              <div class="planet planet-1"></div>
+            </div>
+            <div class="orbit orbit-2">
+              <div class="planet planet-2"></div>
+            </div>
+          </div>
+          <div class="play-btn" id="playBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#222">
+              <polygon points="5,3 19,12 5,21"/>
+            </svg>
+          </div>
+        </div>
+        <div class="video-footer">
+          <span class="time-label">00:00</span>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress"></div>
+          </div>
+          <span class="time-label">31:00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- COURSE LAYOUT -->
+    <div class="course-layout">
+      <div class="course-layout-header">Course Layout</div>
+
+      <div class="week-item" onclick="toggleWeek(this)">
+        <span class="week-label">Week I :</span>
+        <span class="week-title">The Space Environment</span>
+        <span class="chevron">⌄</span>
+      </div>
+      <div class="week-content">Introduction to the solar system, deep space, microgravity, and radiation effects on spacecraft.</div>
+
+      <div class="week-item" onclick="toggleWeek(this)">
+        <span class="week-label">Week II :</span>
+        <span class="week-title">Orbital Mechanics & Trajectories</span>
+        <span class="chevron">⌄</span>
+      </div>
+      <div class="week-content">Kepler's laws, orbital types, gravity-assist maneuvers, and trajectory planning fundamentals.</div>
+
+      <div class="week-item" onclick="toggleWeek(this)">
+        <span class="week-label">Week III :</span>
+        <span class="week-title">Spacecraft Systems</span>
+        <span class="chevron">⌄</span>
+      </div>
+      <div class="week-content">Propulsion, power systems, thermal control, attitude control, and onboard communications.</div>
+
+      <div class="week-item" onclick="toggleWeek(this)">
+        <span class="week-label">Week IV :</span>
+        <span class="week-title">Mission Operations & Science</span>
+        <span class="chevron">⌄</span>
+      </div>
+      <div class="week-content">How missions are planned, executed, and how rockets deliver payloads into orbit.</div>
+    </div>
+
+  </div><!-- /content-grid -->
+
+  <!-- SYLLABUS LINK -->
+  <div style="display:flex; justify-content:flex-end; margin-top:12px; margin-bottom:4px;">
+    <a href="#" style="display:inline-flex;align-items:center;gap:7px;font-family:'Secular One',sans-serif;font-size:14px;color:#999;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#666'" onmouseout="this.style.color='#999'">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7,10 12,15 17,10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      Syllabus
+    </a>
+  </div>
+
+  <!-- WHAT YOU'LL LEARN -->
+  <section style="border-top:none;">
+    <h2 class="section-title">What you'll learn</h2>
+    <ul class="learn-list">
+      <li>
+        <div class="check">✓</div>
+        <span>Understand the solar system, deep space environment, and how microgravity & radiation affect spacecraft.</span>
+      </li>
+      <li>
+        <div class="check">✓</div>
+        <span>Master orbital mechanics — how gravity shapes orbits, Kepler's laws, and gravity-assist maneuvers.</span>
+      </li>
+      <li>
+        <div class="check">✓</div>
+        <span>Explore spacecraft systems: propulsion, power, thermal control, and onboard communication.</span>
+      </li>
+      <li>
+        <div class="check">✓</div>
+        <span>Learn how interplanetary trajectories are planned and how rockets launch payloads into orbit.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- COURSE INCLUDES -->
+  <section>
+    <h2 class="section-title">This course includes</h2>
+    <div class="includes-grid">
+      <div class="include-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5C800" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="3"/>
+          <polygon points="10,8 16,12 10,16" fill="#F5C800" stroke="none"/>
+        </svg>
+        <span>36 mins on-demand video</span>
+      </div>
+      <div class="include-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5C800" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"/>
+          <line x1="12" y1="8" x2="12" y2="13"/>
+          <circle cx="12" cy="16" r="0.8" fill="#F5C800"/>
+        </svg>
+        <span>1 practice test</span>
+      </div>
+      <div class="include-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5C800" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+          <line x1="7" y1="9" x2="17" y2="9"/>
+          <line x1="7" y1="13" x2="17" y2="13"/>
+          <line x1="7" y1="17" x2="13" y2="17"/>
+        </svg>
+        <span>Assignments</span>
+      </div>
+      <div class="include-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5C800" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14,2 14,8 20,8"/>
+          <line x1="8" y1="13" x2="16" y2="13"/>
+          <line x1="8" y1="17" x2="13" y2="17"/>
+        </svg>
+        <span>15 articles</span>
+      </div>
+      <div class="include-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5C800" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="5" y="2" width="14" height="20" rx="3"/>
+          <line x1="9" y1="19" x2="15" y2="19"/>
+        </svg>
+        <span>Access on mobile and TV</span>
+      </div>
+      <div class="include-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5C800" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 9C6 5.686 8.686 3 12 3s6 2.686 6 6c0 2.5-1.5 4.5-3.5 5.5L14 17H10l-.5-2.5C7.5 13.5 6 11.5 6 9z"/>
+          <line x1="10" y1="17" x2="14" y2="17"/>
+          <line x1="10" y1="20" x2="14" y2="20"/>
+          <line x1="12" y1="20" x2="12" y2="22"/>
+        </svg>
+        <span>Certificate of completion</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTRUCTOR -->
+  <section>
+    <h2 class="section-title">Instructor's Details</h2>
+    <div class="instructor-card">
+      <div style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <div class="instructor-avatar">👤</div>
+        <div style="text-align:center;">
+          <div style="font-family:'Secular One',sans-serif;font-size:12px;color:#222;">Prof. Saptarshi Kolay</div>
+          <div style="font-family:'Secular One',sans-serif;font-size:11px;color:#999;">IIT Roorkee</div>
+        </div>
+      </div>
+      <div>
+        <p class="instructor-bio">
+          Prof. Saptarshi Kolay is presently an Assistant Professor at Architecture and Planning department of Indian Institute of Technology Roorkee. After completing his under graduation in Architecture from Jadavpur University, he went on to explore User Centric design at Design Programme of Indian Institute of Technology Kanpur. Along with teaching he is pursuing his PhD from the Department of Architecture and Planning, IIT-Roorkee. He was selected in student-exchange programme for Aalto University, Finland and Escola De Arte and Desino, Spain.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /container -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="logo.png" width="90" height="90" style="border-radius:50%;object-fit:cover;"/></div>
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <div class="footer-committee-label">Core Committee</div>
+      <div class="footer-contacts">
+        <div>Sudarsan P<br>+91 1234567890</div>
+        <div>Sudarsan P<br>+91 1234567890</div>
+        <div>Sudarsan P<br>+91 1234567890</div>
+      </div>
+    </div>
+    <div class="footer-support">Tech Support</div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>Follow Us On</span>
+    <div class="social-icons">
+      <a href="#" title="Twitter">𝕏</a>
+      <a href="#" title="Facebook">f</a>
+      <a href="#" title="YouTube">▶</a>
+      <a href="#" title="Instagram">◎</a>
+      <a href="#" title="LinkedIn">in</a>
+    </div>
+  </div>
+</footer>
+
+<script src="courselayoutscript.js"></script>
+
+</body>
+</html>
