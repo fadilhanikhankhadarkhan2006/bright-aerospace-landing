@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Careers – Bright Aerospace</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Sedan&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="careerstyle.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-logo"><img src="logo.png" width="42" height="42" style="border-radius:50%;object-fit:cover;"/></div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Courses</a></li>
+    <li><a href="#">Community</a></li>
+    <li><a href="#">About</a></li>
+    <li class="dropdown">
+      <a href="#" onclick="toggleDropdown(event)">More</a>
+      <ul class="dropdown-menu">
+        <li><a href="career.html" class="active-link">Career</a></li>
+        <li><a href="project.html">Project</a></li>
+      </ul>
+    </li>
+    <li><a href="#" onclick="scrollToFooter(); return false;">Contact Us</a></li>
+  </ul>
+  <div>
+    <button class="btn-yellow">Login In</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="career-hero">
+  <div class="hero-tag">WE'RE HIRING</div>
+  <h1>Launch Your <span>Career</span><br>in Aerospace</h1>
+  <p>Explore internships and full-time roles at Bright Aerospace. Work on real missions, real systems, and real impact.</p>
+  <div class="hero-stats">
+    <div class="hstat"><span class="counter" data-target="16" data-suffix="+">0+</span><p>Open Roles</p></div>
+    <div class="hstat-divider"></div>
+    <div class="hstat"><span class="counter" data-target="3" data-suffix="">0</span><p>Departments</p></div>
+    <div class="hstat-divider"></div>
+    <div class="hstat"><span class="counter" data-target="100" data-suffix="%">0%</span><p>Remote Friendly</p></div>
+  </div>
+</section>
+
+<!-- FILTERS + SEARCH -->
+<section class="filters-section">
+  <div class="search-row reveal">
+    <div class="search-wrapper">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="searchInput" placeholder="Search by keyword, role, or skill…" oninput="applyFilters()"/>
+    </div>
+    <div class="results-count" id="resultsCount"><strong>11</strong> roles</div>
+  </div>
+  <div class="filters reveal reveal-delay-1">
+    <button class="filter-btn active" data-filter-type="type" data-value="all" onclick="setFilter('type','all',this)">All Types</button>
+    <button class="filter-btn" data-filter-type="type" data-value="internship" onclick="setFilter('type','internship',this)">Internships</button>
+    <button class="filter-btn" data-filter-type="type" data-value="fulltime" onclick="setFilter('type','fulltime',this)">Full-Time</button>
+    <button class="filter-btn" data-filter-type="type" data-value="parttime" onclick="setFilter('type','parttime',this)">Part-Time</button>
+    <div class="filters-divider"></div>
+    <button class="filter-btn active" data-filter-type="dept" data-value="all" onclick="setFilter('dept','all',this)">All Depts</button>
+    <button class="filter-btn" data-filter-type="dept" data-value="Propulsion" onclick="setFilter('dept','Propulsion',this)">Propulsion</button>
+    <button class="filter-btn" data-filter-type="dept" data-value="Avionics" onclick="setFilter('dept','Avionics',this)">Avionics</button>
+    <button class="filter-btn" data-filter-type="dept" data-value="Software" onclick="setFilter('dept','Software',this)">Software</button>
+    <button class="filter-btn" data-filter-type="dept" data-value="Structures" onclick="setFilter('dept','Structures',this)">Structures</button>
+    <button class="filter-btn" data-filter-type="dept" data-value="CFD" onclick="setFilter('dept','CFD',this)">CFD</button>
+    <button class="filter-btn" data-filter-type="dept" data-value="GNC" onclick="setFilter('dept','GNC',this)">GNC</button>
+    <button class="filter-btn" data-filter-type="dept" data-value="R&D" onclick="setFilter('dept','R&D',this)">R&D</button>
+  </div>
+</section>
+
+<!-- JOB LISTINGS -->
+<section class="listings-section">
+  <div class="listings" id="listings">
+
+    <div class="job-card" data-type="internship" data-dept="Propulsion" data-keywords="propulsion engineering intern liquid fuel thrust test bench">
+      <div class="job-card-top"><div class="job-top-left"><div class="job-tag internship">Internship</div><div class="exp-badge">Fresher</div></div><div class="job-dept">Propulsion</div></div>
+      <h3 class="job-title">Propulsion Engineering Intern</h3>
+      <div class="job-meta"><span><i class="fa-solid fa-location-dot"></i> Remote</span><span><i class="fa-solid fa-clock"></i> 3 Months</span><span><i class="fa-solid fa-indian-rupee-sign"></i> 5,000/mo</span></div>
+      <p class="job-desc">Work alongside senior engineers on liquid propellant systems, thrust calculations, and test bench analysis. Ideal for 2nd/3rd year engineering students.</p>
+      <div class="job-footer"><div class="job-footer-left"><span class="job-deadline"><i class="fa-regular fa-calendar"></i> Apply by Aug 15, 2025</span><span class="job-posted"><i class="fa-regular fa-clock"></i> Posted 2 days ago</span></div><div class="job-footer-btns"><button class="share-btn" onclick="openShare('Propulsion Engineering Intern')"><i class="fa-solid fa-share-nodes"></i></button><button class="btn-yellow apply-btn" onclick="openApply('Propulsion Engineering Intern')">Apply Now</button></div></div>
+    </div>
+
+    <div class="job-card" data-type="internship" data-dept="Avionics" data-keywords="avionics embedded systems firmware sensor telemetry c++ real-time">
+      <div class="job-card-top"><div class="job-top-left"><div class="job-tag internship">Internship</div><div class="exp-badge">Fresher</div></div><div class="job-dept">Avionics</div></div>
+      <h3 class="job-title">Avionics & Embedded Systems Intern</h3>
+      <div class="job-meta"><span><i class="fa-solid fa-location-dot"></i> Hybrid</span><span><i class="fa-solid fa-clock"></i> 6 Months</span><span><i class="fa-solid fa-indian-rupee-sign"></i> 8,000/mo</span></div>
+      <p class="job-desc">Develop firmware for onboard systems, work on sensor integration and real-time telemetry pipelines. Knowledge of C/C++ and embedded systems preferred.</p>
+      <div class="job-footer"><div class="job-footer-left"><span class="job-deadline"><i class="fa-regular fa-calendar"></i> Apply by Sep 1, 2025</span><span class="job-posted"><i class="fa-regular fa-clock"></i> Posted 5 days ago</span></div><div class="job-footer-btns"><button class="share-btn" onclick="openShare('Avionics & Embedded Systems Intern')"><i class="fa-solid fa-share-nodes"></i></button><button class="btn-yellow apply-btn" onclick="openApply('Avionics & Embedded Systems Intern')">Apply Now</button></div></div>
+    </div>
+
+    <div class="job-card" data-type="fulltime" data-dept="Structures" data-keywords="structural analysis engineer FEA fatigue ansys nastran aerospace components">
+      <div class="job-card-top"><div class="job-top-left"><div class="job-tag fulltime">Full-Time</div><div class="exp-badge">1–2 yrs</div></div><div class="job-dept">Structures</div></div>
+      <h3 class="job-title">Structural Analysis Engineer</h3>
+      <div class="job-meta"><span><i class="fa-solid fa-location-dot"></i> Bangalore</span><span><i class="fa-solid fa-clock"></i> Full-Time</span><span><i class="fa-solid fa-indian-rupee-sign"></i> 8–12 LPA</span></div>
+      <p class="job-desc">Lead FEA simulations, fatigue analysis, and structural validation for aerospace components. 2+ years experience with ANSYS or Nastran required.</p>
+      <div class="job-footer"><div class="job-footer-left"><span class="job-deadline"><i class="fa-regular fa-calendar"></i> Apply by Jul 30, 2025</span><span class="job-posted"><i class="fa-regular fa-clock"></i> Posted 10 days ago</span></div><div class="job-footer-btns"><button class="share-btn" onclick="openShare('Structural Analysis Engineer')"><i class="fa-solid fa-share-nodes"></i></button><button class="btn-yellow apply-btn" onclick="openApply('Structural Analysis Engineer')">Apply Now</button></div></div>
+    </div>
+
+    <div class="job-card" data-type="fulltime" data-dept="Software" data-keywords="flight software developer GNC python matlab c++ control algorithms mission planning">
+      <div class="job-card-top"><div class="job-top-left"><div class="job-tag fulltime">Full-Time</div><div class="exp-badge">3+ yrs</div></div><div class="job-dept">Software</div></div>
+      <h3 class="job-title">Flight Software Developer</h3>
+      <div class="job-meta"><span><i class="fa-solid fa-location-dot"></i> Remote</span><span><i class="fa-solid fa-clock"></i> Full-Time</span><span><i class="fa-solid fa-indian-rupee-sign"></i> 12–18 LPA</span></div>
+      <p class="job-desc">Build and maintain flight control algorithms, GNC software, and mission planning tools. Python, C++ and MATLAB experience required.</p>
+      <div class="job-footer"><div class="job-footer-left"><span class="job-deadline"><i class="fa-regular fa-calendar"></i> Apply by Aug 20, 2025</span><span class="job-posted"><i class="fa-regular fa-clock"></i> Posted 7 days ago</span></div><div class="job-footer-btns"><button class="share-btn" onclick="openShare('Flight Software Developer')"><i class="fa-solid fa-share-nodes"></i></button><button class="btn-yellow apply-btn" onclick="openApply('Flight Software Developer')">Apply Now</button></div></div>
+    </div>
+
+    <div class="job-card" data-type="parttime" data-dept="Education" data-keywords="aerospace content creator course writing technical articles learning modules education">
+      <div class="job-card-top"><div class="job-top-left"><div class="job-tag parttime">Part-Time</div><div class="exp-badge">1–2 yrs</div></div><div class="job-dept">Education</div></div>
+      <h3 class="job-title">Aerospace Content Creator</h3>
+      <div class="job-meta"><span><i class="fa-solid fa-location-dot"></i> Remote</span><span><i class="fa-solid fa-clock"></i> 20 hrs/week</span><span><i class="fa-solid fa-indian-rupee-sign"></i> 15,000/mo</span></div>
+      <p class="job-desc">Create course content, write technical articles, and develop learning modules for our platform. Strong aerospace background and writing skills needed.</p>
+      <div class="job-footer"><div class="job-footer-left"><span class="job-deadline"><i class="fa-regular fa-calendar"></i> Apply by Sep 10, 2025</span><span class="job-posted"><i class="fa-regular fa-clock"></i> Posted 1 day ago</span></div><div class="job-footer-btns"><button class="share-btn" onclick="openShare('Aerospace Content Creator')"><i class="fa-solid fa-share-nodes"></i></button><button class="btn-yellow apply-btn" onclick="openApply('Aerospace Content Creator')">Apply Now</button></div></div>
+    </div>
+
+    <div class="job-card" data-type="internship" data-dept="CFD" data-keywords="CFD simulation intern aerodynamic openfoam ansys fluent computational fluid dynamics">
+      <div class="job-card-top"><div class="job-top-left"><div class="job-tag internship">Internship</div><div class="exp-badge">Fresher</div></div><div class="job-dept">CFD</div></div>
+      <h3 class="job-title">CFD Simulation Intern</h3>
+      <div class="job-meta"><span><i class="fa-solid fa-location-dot"></i> Remote</span><span><i class="fa-solid fa-clock"></i> 4 Months</span><span><i class="fa-solid fa-indian-rupee-sign"></i> 6,000/mo</span></div>
+      <p class="job-desc">Run computational fluid dynamics simulations for aerodynamic studies. Familiarity with OpenFOAM or ANSYS Fluent is a plus.</p>
+      <div class="job-footer"><div class="job-footer-left"><span class="job-deadline"><i class="fa-regular fa-calendar"></i> Apply by Aug 5, 2025</span><span class="job-posted"><i class="fa-regular fa-clock"></i> Posted 14 days ago</span></div><div class="job-footer-btns"><button class="share-btn" onclick="openShare('CFD Simulation Intern')"><i class="fa-solid fa-share-nodes"></i></button><button class="btn-yellow apply-btn" onclick="openApply('CFD Simulation Intern')">Apply Now</button></div></div>
+    </div>
+
+    <div class="job-card" data-type="fulltime" data-dept="Structures" data-keywords="composite materials engineer carbon fibre catia solidworks aerostructures">
+      <div class="job-card-top"><div class="job-top-left"><div class="job-tag fulltime">Full-Time</div><div class="exp-badge">1–2 yrs</div></div><div class="job-dept">Aerostructures</div></div>
+      <h3 class="job-title">Composite Materials Engineer</h3>
+      <div class="job-meta"><span><i class="fa-solid fa-location-dot"></i> Chennai</span><span><i class="fa-solid fa-clock"></i> Full-Time</span><span><i class="fa-solid fa-indian-rupee-sign"></i> 9–14 LPA</span></div>
+      <p class="job-desc">Design and test carbon fibre and composite structures for aerospace applications. Experience with CATIA or SolidWorks required.</p>
+      <div class="job-footer"><div class="job-footer-left"><span class="job-deadline"><i class="fa-regular fa-calendar"></i> Apply by Sep 5, 2025</span><span class="job-posted"><i class="fa-regular fa-clock"></i> Posted 3 days ago</span></div><div class="job-footer-btns"><button class="share-btn" onclick="openShare('Composite Materials Engineer')"><i class="fa-solid fa-share-nodes"></i></button><button class="btn-yellow apply-btn" onclick="openApply('Composite Materials Engineer')">Apply Now</button></div></div>
+    </div>
+
+    <div class="job-card" data-type="internship" data-dept="GNC" data-keywords="guidance navigation control intern attitude trajectory satellite algorithm">
+      <div class="job-card-top"><div class="job-top-left"><div class="job-tag internship">Internship</div><div class="exp-badge">Fresher</div></div><div class="job-dept">GNC</div></div>
+      <h3 class="job-title">Guidance Navigation & Control Intern</h3>
+      <div class="job-meta"><span><i class="fa-solid fa-location-dot"></i> Remote</span><span><i class="fa-solid fa-clock"></i> 5 Months</span><span><i class="fa-solid fa-indian-rupee-sign"></i> 7,000/mo</span></div>
+      <p class="job-desc">Assist in developing navigation algorithms, attitude control systems, and trajectory optimisation for small satellite missions.</p>
+      <div class="job-footer"><div class="job-footer-left"><span class="job-deadline"><i class="fa-regular fa-calendar"></i> Apply by Aug 25, 2025</span><span class="job-posted"><i class="fa-regular fa-clock"></i> Posted 6 days ago</span></div><div class="job-footer-btns"><button class="share-btn" onclick="openShare('Guidance Navigation & Control Intern')"><i class="fa-solid fa-share-nodes"></i></button><button class="btn-yellow apply-btn" onclick="openApply('Guidance Navigation & Control Intern')">Apply Now</button></div></div>
+    </div>
+
+    <div class="job-card" data-type="parttime" data-dept="Marketing" data-keywords="social media outreach marketing campaigns student community content">
+      <div class="job-card-top"><div class="job-top-left"><div class="job-tag parttime">Part-Time</div><div class="exp-badge">Fresher</div></div><div class="job-dept">Marketing</div></div>
+      <h3 class="job-title">Social Media & Outreach Associate</h3>
+      <div class="job-meta"><span><i class="fa-solid fa-location-dot"></i> Remote</span><span><i class="fa-solid fa-clock"></i> 15 hrs/week</span><span><i class="fa-solid fa-indian-rupee-sign"></i> 10,000/mo</span></div>
+      <p class="job-desc">Manage our social channels, run campaigns, and grow our student community. Aerospace enthusiasm and content creation skills a must.</p>
+      <div class="job-footer"><div class="job-footer-left"><span class="job-deadline"><i class="fa-regular fa-calendar"></i> Apply by Sep 20, 2025</span><span class="job-posted"><i class="fa-regular fa-clock"></i> Posted 4 days ago</span></div><div class="job-footer-btns"><button class="share-btn" onclick="openShare('Social Media & Outreach Associate')"><i class="fa-solid fa-share-nodes"></i></button><button class="btn-yellow apply-btn" onclick="openApply('Social Media & Outreach Associate')">Apply Now</button></div></div>
+    </div>
+
+    <div class="job-card" data-type="fulltime" data-dept="Systems" data-keywords="systems integration engineer mechanical electrical software test campaigns subsystems">
+      <div class="job-card-top"><div class="job-top-left"><div class="job-tag fulltime">Full-Time</div><div class="exp-badge">3+ yrs</div></div><div class="job-dept">Systems</div></div>
+      <h3 class="job-title">Systems Integration Engineer</h3>
+      <div class="job-meta"><span><i class="fa-solid fa-location-dot"></i> Hyderabad</span><span><i class="fa-solid fa-clock"></i> Full-Time</span><span><i class="fa-solid fa-indian-rupee-sign"></i> 10–16 LPA</span></div>
+      <p class="job-desc">Oversee integration of subsystems, coordinate between mechanical, electrical, and software teams, and manage test campaigns.</p>
+      <div class="job-footer"><div class="job-footer-left"><span class="job-deadline"><i class="fa-regular fa-calendar"></i> Apply by Aug 30, 2025</span><span class="job-posted"><i class="fa-regular fa-clock"></i> Posted 8 days ago</span></div><div class="job-footer-btns"><button class="share-btn" onclick="openShare('Systems Integration Engineer')"><i class="fa-solid fa-share-nodes"></i></button><button class="btn-yellow apply-btn" onclick="openApply('Systems Integration Engineer')">Apply Now</button></div></div>
+    </div>
+
+    <div class="job-card" data-type="internship" data-dept="R&D" data-keywords="satellite technology research intern cubesat feasibility R&D report">
+      <div class="job-card-top"><div class="job-top-left"><div class="job-tag internship">Internship</div><div class="exp-badge">Fresher</div></div><div class="job-dept">R&D</div></div>
+      <h3 class="job-title">Satellite Technology Research Intern</h3>
+      <div class="job-meta"><span><i class="fa-solid fa-location-dot"></i> Remote</span><span><i class="fa-solid fa-clock"></i> 3 Months</span><span><i class="fa-solid fa-indian-rupee-sign"></i> 6,500/mo</span></div>
+      <p class="job-desc">Research emerging satellite technologies, compile technical reports, and support the R&D team in feasibility studies for cubesat missions.</p>
+      <div class="job-footer"><div class="job-footer-left"><span class="job-deadline"><i class="fa-regular fa-calendar"></i> Apply by Sep 15, 2025</span><span class="job-posted"><i class="fa-regular fa-clock"></i> Posted 11 days ago</span></div><div class="job-footer-btns"><button class="share-btn" onclick="openShare('Satellite Technology Research Intern')"><i class="fa-solid fa-share-nodes"></i></button><button class="btn-yellow apply-btn" onclick="openApply('Satellite Technology Research Intern')">Apply Now</button></div></div>
+    </div>
+
+    <div class="no-results" id="noResults">
+      <i class="fa-solid fa-satellite"></i>
+      <h3>No roles found</h3>
+      <p>Try adjusting your search or filters to find what you're looking for.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY JOIN US -->
+<section class="why-section">
+  <div class="section-header reveal"><div class="section-tag">PERKS & CULTURE</div><h2>Why Join <span>Bright Aerospace?</span></h2></div>
+  <div class="perks-grid">
+    <div class="perk-card reveal reveal-left reveal-delay-1"><div class="perk-icon"><i class="fa-solid fa-wifi"></i></div><h3>100% Remote Friendly</h3><p>Work from anywhere in India. We trust our team and focus on output, not hours. Flexible schedules that work around your life.</p></div>
+    <div class="perk-card reveal reveal-left reveal-delay-2"><div class="perk-icon"><i class="fa-solid fa-user-graduate"></i></div><h3>Expert Mentorship</h3><p>Get direct access to industry professionals with experience at ISRO, NASA, and leading private aerospace companies.</p></div>
+    <div class="perk-card reveal reveal-right reveal-delay-3"><div class="perk-icon"><i class="fa-solid fa-rocket"></i></div><h3>Real Projects</h3><p>No busywork. From day one, you're contributing to live missions, real hardware, and systems that fly in space.</p></div>
+    <div class="perk-card reveal reveal-right reveal-delay-4"><div class="perk-icon"><i class="fa-solid fa-certificate"></i></div><h3>Certificate & LOR</h3><p>Receive a completion certificate and letter of recommendation that stands out on your resume and LinkedIn profile.</p></div>
+  </div>
+</section>
+
+<!-- HIRING PROCESS -->
+<section class="process-section">
+  <div class="section-header reveal"><div class="section-tag">HOW IT WORKS</div><h2>Our <span>Hiring Process</span></h2></div>
+  <div class="timeline">
+    <div class="timeline-step reveal reveal-scale reveal-delay-1"><div class="step-circle"><i class="fa-solid fa-paper-plane"></i><span class="step-num">1</span></div><h4>Apply Online</h4><p>Submit your application and resume through our careers portal.</p></div>
+    <div class="timeline-step reveal reveal-scale reveal-delay-2"><div class="step-circle"><i class="fa-solid fa-list-check"></i><span class="step-num">2</span></div><h4>Shortlisting</h4><p>Our team reviews applications. We respond within 5–7 business days.</p></div>
+    <div class="timeline-step reveal reveal-scale reveal-delay-3"><div class="step-circle"><i class="fa-solid fa-comments"></i><span class="step-num">3</span></div><h4>Interview</h4><p>A short technical or portfolio interview with our core team. Friendly, not stressful.</p></div>
+    <div class="timeline-step reveal reveal-scale reveal-delay-4"><div class="step-circle"><i class="fa-solid fa-handshake"></i><span class="step-num">4</span></div><h4>Offer & Onboard</h4><p>Get your offer letter and join the mission. Welcome to the team!</p></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="section-header reveal"><div class="section-tag">WHAT THEY SAY</div><h2>Hear From Our <span>Past Interns</span></h2></div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal reveal-left reveal-delay-1"><span class="quote-icon">"</span><div class="stars">★★★★★</div><p>My internship at Bright Aerospace was unlike anything I expected from a 3-month program. I was working on actual propulsion test data from week one — not just making slides or fetching coffee. The mentorship was incredible and I left with a portfolio piece I still talk about in every interview.</p><div class="testimonial-author"><div class="author-avatar">A</div><div class="author-info"><h4>Arjun Mehta</h4><span>Propulsion Intern · IIT Bombay, 2024</span></div></div></div>
+    <div class="testimonial-card reveal reveal-delay-2"><span class="quote-icon">"</span><div class="stars">★★★★★</div><p>I joined as a GNC intern expecting to learn theory, but I ended up writing real Python scripts for trajectory simulation that the team actually used. The remote culture was seamless, and my mentor always made time for questions. Got a stellar LOR and a PPO at the end!</p><div class="testimonial-author"><div class="author-avatar">P</div><div class="author-info"><h4>Priya Nair</h4><span>GNC Intern · NIT Trichy, 2024</span></div></div></div>
+    <div class="testimonial-card reveal reveal-right reveal-delay-3"><span class="quote-icon">"</span><div class="stars">★★★★★</div><p>As a final-year student, I wasn't sure if I was ready for a technical role. The team at Bright Aerospace helped me grow fast — pair programming sessions, weekly reviews, and a culture that celebrates curiosity. It genuinely changed the direction of my career.</p><div class="testimonial-author"><div class="author-avatar">R</div><div class="author-info"><h4>Rohan Kapoor</h4><span>Avionics Intern · VIT Vellore, 2023</span></div></div></div>
+  </div>
+</section>
+
+<!-- APPLY MODAL -->
+<div class="modal-overlay" id="applyModal">
+  <div class="modal-box">
+    <div class="modal-header"><h2>Apply for <span id="modalJobTitle"></span></h2><button class="close-modal" onclick="closeApply()">×</button></div>
+    <div class="modal-body">
+      <div class="form-group"><label>Full Name <span style="color:#e53935">*</span></label><input type="text" id="field-name" placeholder="Your full name"/><span class="field-error" id="err-name">Please enter your full name.</span></div>
+      <div class="form-group"><label>Email Address <span style="color:#e53935">*</span></label><input type="email" id="field-email" placeholder="you@email.com"/><span class="field-error" id="err-email">Please enter a valid email address.</span></div>
+      <div class="form-group"><label>Phone Number <span style="color:#e53935">*</span></label><input type="tel" id="field-phone" placeholder="+91 XXXXX XXXXX"/><span class="field-error" id="err-phone">Please enter your phone number.</span></div>
+      <div class="form-group"><label>College / University <span style="color:#e53935">*</span></label><input type="text" id="field-college" placeholder="Your institution"/><span class="field-error" id="err-college">Please enter your college or university.</span></div>
+      <div class="form-group"><label>Resume / CV <span style="color:#e53935">*</span></label>
+        <div class="file-upload" id="fileUploadWrap">
+          <input type="file" id="field-resume" accept=".pdf,.doc,.docx" onchange="handleFile(this)"/>
+          <div class="file-label"><i class="fa-solid fa-upload"></i><span id="fileText">Upload PDF or DOC</span></div>
+        </div>
+        <span class="field-error" id="err-resume">Please upload your resume.</span>
+      </div>
+      <div class="form-group"><label>Why do you want to join? <span style="color:#aaa;font-size:11px;">(optional)</span></label><textarea id="field-why" placeholder="Tell us a bit about yourself and why this role excites you..."></textarea></div>
+    </div>
+    <div class="modal-footer"><button class="btn-gray" onclick="closeApply()">Cancel</button><button class="btn-yellow" onclick="submitApply()">Submit Application</button></div>
+  </div>
+</div>
+
+<!-- SHARE MODAL -->
+<div class="share-modal-overlay" id="shareModal">
+  <div class="share-modal-box">
+    <h3>Share this Role</h3>
+    <p id="shareJobTitle" style="font-family:'Koulen',sans-serif;font-size:14px;color:var(--text);margin-bottom:14px;"></p>
+    <div class="share-link-row">
+      <input type="text" id="shareLinkInput" readonly/>
+      <button class="btn-yellow" style="padding:9px 16px;font-size:12px;" onclick="copyLink()">Copy</button>
+    </div>
+    <div class="share-icons">
+      <a class="share-icon-btn" id="shareWhatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+      <a class="share-icon-btn" id="shareLinkedin" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a class="share-icon-btn" id="shareTwitter"  target="_blank"><i class="fa-brands fa-twitter"></i></a>
+      <a class="share-icon-btn" id="shareEmail"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+    <div class="share-modal-footer"><button class="btn-gray" onclick="closeShare()">Close</button></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-content">
+    <div class="footer-logo"><img src="logo.png" width="90" height="90" style="border-radius:50%;object-fit:cover;"/></div>
+    <div class="footer-section"><h4>Contact Us</h4><div class="contact-grid"><div class="contact-col"><span>Core Committee</span><span>Sudarsan P</span><span>+91 1234567890</span></div><div class="contact-col"><br><span>Sudarsan P</span><span>+91 1234567890</span></div><div class="contact-col"><br><span>Sudarsan P</span><span>+91 1234567890</span></div></div></div>
+    <div class="footer-section" style="margin-left:auto;"><h4 style="color:#FFD700;text-transform:none;font-weight:normal;">Tech Support</h4></div>
+  </div>
+  <div class="social-links"><span>Follow Us On</span><a href="#"><i class="fa-brands fa-twitter"></i></a><a href="#"><i class="fa-brands fa-facebook"></i></a><a href="#"><i class="fa-brands fa-youtube"></i></a><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-linkedin"></i></a></div>
+  <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fa-solid fa-arrow-up"></i> Back to Top</button>
+</footer>
+
+<script src="careerscript.js"></script>
+</body>
+</html>
